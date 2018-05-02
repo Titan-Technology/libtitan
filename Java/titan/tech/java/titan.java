@@ -184,6 +184,10 @@ public class titan{
 			String IP = address.getHostAddress();
 			return IP;
 		}
+	 public static void sleep(int time) throws InterruptedException 
+	 	{
+	            Thread.sleep(time);
+	    }
 	//Private Library Functions and voids
     private static final DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	private String executeCommand(String command)
