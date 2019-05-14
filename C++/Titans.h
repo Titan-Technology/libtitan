@@ -1,5 +1,5 @@
-#ifndef EMOTIONS
-#define EMOTIONS
+#ifndef TITANS
+#define TITANS
 //Titan C++ Libary
 #include<iostream>
 #include<sstream>
