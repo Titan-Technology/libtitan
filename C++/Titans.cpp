@@ -37,6 +37,13 @@
 #include<cstdlib>
 //Clock Test
 #include <time.h>
+#ifdef WIN32
+#include <windows.h>
+#elif _POSIX_C_SOURCE >= 199309L
+#include <time.h>   // for nanosleep
+#else
+#include <unistd.h> // for usleep
+#endif
 #ifdef WINDOWS
 	#include<direct.h>
 	#define GetCurrentDir _getcwd
@@ -58,6 +65,19 @@ namespace Titan
 {
     namespace AI
         {
+            void sleep_ms(int milliseconds) // cross-platform sleep function
+                {
+                    #ifdef WIN32
+                        Sleep(milliseconds);
+                    #elif _POSIX_C_SOURCE >= 199309L
+                        struct timespec ts;
+                        ts.tv_sec = milliseconds / 1000;
+                        ts.tv_nsec = (milliseconds % 1000) * 1000000;
+                        nanosleep(&ts, NULL);
+                    #else
+                        usleep(milliseconds * 1000);
+                    #endif
+                }
             string words[128];
             int frequency_of_primes(int n)
                 {
@@ -126,6 +146,7 @@ namespace Titan
                         {
                             // Leave some CPU time for other processes
                         }
+                    sleep_ms(100);
                 }
             void TTS(string phase)
                 {
