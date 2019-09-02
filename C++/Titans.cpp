@@ -20,8 +20,8 @@
     #include<dos.h>
 #endif
 //for sleep fuction
-#include<conio.h>
 #ifdef WIN32
+    #include<conio.h>
     #include<windows.h>
     #include<unistd.h>
 #else
@@ -169,12 +169,29 @@ namespace Titan
 
     namespace time
         {
-            string get_current_time()
-                {
-                    char time [10];
-                    _strtime(time);
-                    return string(time);
-                }
+		#ifdef __linux__
+			const string currentDateTime()
+				{
+				/*
+    					time_t now = time(0);
+    					struct tm  tstruct;
+    					char buf[80];
+    					tstruct = *localtime(&now);
+    					strftime(buf, sizeof(buf), "%X", &tstruct);
+		
+    					return buf;*/
+				}
+		#endif
+            	string get_current_time()
+                	{
+				#ifdef WIN32
+	                		char time [10];
+	                    		_strtime(time);
+	                    		return string(time);
+				#else
+					return string(currentDateTime());
+				#endif
+                	}
         };
 
     namespace encryption
