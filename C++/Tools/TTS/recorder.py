@@ -7,7 +7,6 @@ import os
 
 content_array = []
 
-
 defaultframes = 512
 
 class textcolors:
@@ -53,7 +52,6 @@ def recorder(filename):
 	if default_device_index == -1:
 	    print (textcolors.fail + "No device available. Quitting." + textcolors.end)
 	    exit()
-
 
 	#Get input or default
 	device_id = 6
