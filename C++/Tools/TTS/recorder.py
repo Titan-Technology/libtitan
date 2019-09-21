@@ -116,7 +116,7 @@ def file_read(fname):
                 for line in f:
                         content_array.append(line)
 
-file_read('test.txt')
+file_read('common_words.txt')
 
 for i in range(0,content_array.index(max(content_array))):
 	#X,Y cooriendates must be edited to fit in monitor and where the narrator program is
