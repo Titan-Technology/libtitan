@@ -1,7 +1,7 @@
 import keyboard
 import pyautogui
 import time
-import pyaudio
+import pyaudio #not standard pyaudio use https://github.com/intxcc/pyaudio_portaudio.git
 import wave
 import os
 
@@ -119,11 +119,11 @@ def file_read(fname):
 file_read('test.txt')
 
 for i in range(0,content_array.index(max(content_array))):
+	#X,Y cooriendates must be edited to fit in monitor and where the narrator program is
 	pyautogui.click(100, 100)
 	keyboard.add_hotkey('ctrl+shift+a', print, args=('triggered', 'hotkey'))
 	pyautogui.click(100, 100)
 	pyautogui.click(100, 100)
-	'''pyautogui.click(100, 100)'''
 	keyboard.write(content_array[i])
 	pyautogui.click(100, 450)
 	filefineal = str(content_array[i]).replace('\n',"")
