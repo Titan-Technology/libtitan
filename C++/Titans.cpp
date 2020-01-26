@@ -15,7 +15,7 @@
 #include<stdio.h>
 //for date & time
 #include<ctime>
-#include <time.h>
+#include<time.h>
 #ifdef WIN32
     #include<dos.h>
 #endif
@@ -182,9 +182,9 @@ namespace Titan
 	     #else
 	     string get_current_time()
 		{
-    			time_t     now = time(0);
+    			time_t now = time(0);
     			struct tm  tstruct;
-    			char       buf[80];
+    			char buf[80];
     			tstruct = *localtime(&now);
     			strftime(buf, sizeof(buf), "%X", &tstruct);
 		
