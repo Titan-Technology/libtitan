@@ -182,13 +182,12 @@ namespace Titan
 	     #else
 	     string get_current_time()
 		{
-    			time_t now = time(0);
+    			time_t now = std::time(0);
     			struct tm  tstruct;
     			char buf[80];
     			tstruct = *localtime(&now);
     			strftime(buf, sizeof(buf), "%X", &tstruct);
-		
-		    return buf;
+		    	return buf;
 		}
 	      #endif
         };
