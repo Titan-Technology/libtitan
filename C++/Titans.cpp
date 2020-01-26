@@ -20,7 +20,6 @@
     #include<dos.h>
 #endif
 //for sleep fuction
-#include<conio.h>
 #ifdef WIN32
     #include<windows.h>
     #include<unistd.h>
