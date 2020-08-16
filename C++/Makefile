@@ -12,7 +12,6 @@ clean:
 	rm libtitans.a *.o *.h.gch
 
 install:
-	pwd
 	cp Titans.h /usr/local/include/
 	cp libtitans.a /usr/local/lib/
 
