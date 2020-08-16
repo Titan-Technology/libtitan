@@ -13,8 +13,8 @@ clean:
 
 install:
 	pwd
-	cp Titans.h /usrl/local/include/
-	cp libtitans.a /usrl/local/lib/
+	cp Titans.h /usr/local/include/
+	cp libtitans.a /usr/local/lib/
 
 install-bow:
 	tar cvfz libtitans-BOW.tar.gz BagOfWords\(BOW\)/
