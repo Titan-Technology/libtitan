@@ -12,10 +12,10 @@ clean:
 	rm libtitans.a *.o *.h.gch
 
 install:
-	cp Titans.h /usrl/local/include
-	cp libtitans.a /usrl/local/lib
+	cp Titans.h /usrl/local/include/
+	cp libtitans.a /usrl/local/lib/
 
 install-bow:
 	tar cvf libtitans-BOW.tar.gz BagOfWords\(BOW\)/
-	mkdir /usr/local/share/libtitans-bow
-	cp libtitans-BOW.tar.gz /usr/local/share/libtitans-bow
+	mkdir /usr/local/share/libtitans-bow/
+	cp libtitans-BOW.tar.gz /usr/local/share/libtitans-bow/
