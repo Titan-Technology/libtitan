@@ -16,6 +16,6 @@ install:
 	cp libtitans.a /usrl/local/lib/
 
 install-bow:
-	tar cvf libtitans-BOW.tar.gz BagOfWords\(BOW\)/
+	tar cvfz libtitans-BOW.tar.gz BagOfWords\(BOW\)/
 	mkdir /usr/local/share/libtitans-bow/
 	cp libtitans-BOW.tar.gz /usr/local/share/libtitans-bow/
