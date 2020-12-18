@@ -8,4 +8,4 @@ FROM gitpod/workspace-full
 
 USER root
 RUN apt update
-RUN apt install libsfml-dev
+RUN apt install libsfml-dev -y
