@@ -135,7 +135,20 @@ namespace Titan
                     // Load an ogg music file
                     sf::Music music;
                     if (!music.openFromFile("BagOfWords(BOW)/" + filename))
-                        return;
+                        {
+                            ofstream output_file;
+                            output_file.open("unrecognized.txt",ios::app);
+                            if (output_file.is_open())
+                                {
+                                    output_file << filename << endl;
+                                    output_file.close();
+                                }
+                            else
+                                {
+                                    cout << "Unable to open file";
+                                }
+                            return;
+                        }
         
                     // Play it
                     music.play();
