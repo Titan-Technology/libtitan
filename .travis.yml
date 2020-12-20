@@ -22,6 +22,8 @@ jobs:
           - CC='gcc-8'
           - CFLAGS='-DNRUNS=100000000'
       script:
+        - sudo apt update
+        - sudo apt install libsfml-dev
         - cd C++
         - make test
 
