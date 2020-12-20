@@ -1,7 +1,9 @@
 from __future__ import division
+import os
 import io
 import re
 import pyttsx3
+
 
 def is_raspberry_pi(raise_on_errors=False):
     try:
